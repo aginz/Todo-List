@@ -1,0 +1,66 @@
+<% @todo_items.each do |todo_item| %>
+  <div class="container text-center">
+    <% completed = "" %>
+    <% striked = "" %>
+    
+
+    <% if todo_item[:check] == true %>
+      <% completed = "complete" %>
+      <% striked = "striked" %>
+    <% end %>
+
+    <div class="wrapper">
+      <div class="<%= completed %> check">
+        <i class="fa fa-check"></i>
+      </div>
+      <div class="<%= completed %> star">
+        <i class="fa fa-star"></i>
+      </div>
+      <div style=  class="<%= completed %> todo_item">
+        <p class="<%= striked %>"><%= todo_item.description %></p>
+      </div>
+      <div class="<%= completed %> trash">
+        <i class="fa fa-trash"></i>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+
+
+
+<% @todo_items.each do |todo_item| %>
+  <div class="text-center">
+    <% if todo_item[:check] == true %>
+      <div class="wrapper">
+        <div class="complete check">
+          <i class="fa fa-check"></i>
+        </div>
+        <div class="complete star">
+          <i class="fa fa-star"></i>
+        </div>
+        <div style=  class="complete todo_item">
+          <p><strike><%= todo_item.description %></strike></p>
+        </div>
+        <div class="complete trash">
+          <i class="fa fa-trash"></i>
+        </div>
+      </div>
+    <% else %>
+      <div class="wrapper text-center">
+        <div class="incomplete check">
+          <i class="fa fa-check"></i>
+        </div>
+        <div class="incomplete star">
+          <p style><i class="fa fa-star"></i></p>
+        </div>
+        <div class="incomplete todo_item">
+          <p><%= todo_item.description %></p>
+        </div>
+        <div class="incomplete trash">
+          <i class="fa fa-trash"></i>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
