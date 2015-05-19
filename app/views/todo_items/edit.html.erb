@@ -1,5 +1,8 @@
-<h1>Editing Todo Item</h1>
+<div class="todo_panel">
+	<header>Edit Todo Item</header>
 
-<%= render 'form' %>
-
-<%= link_to 'Home', todo_items_path %>
+	<div class="todo_form">
+	<%= render 'form' %>
+	<%= link_to 'Home', todo_items_path, class: 'todo_link' %>
+	</div>
+</div>

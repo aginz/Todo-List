@@ -51,10 +51,16 @@ html, body {
   font-weight: 900;
 }
 
-.todo_panel form {
-  width: 20%;
-  margin: 20px auto;
-  padding: 120px 0 0 0;
+.todo_panel .todo_form {
+  width: 30%;
+  position: relative;
+  margin: 20% auto;
+  border: white solid 2px;
+  padding: 2.5%;
+  clear: both;
+  border-radius: 10%;
+  box-sizing: border-box;
+  background-color: $white_opaque
 }
 
 .todo_panel section {
