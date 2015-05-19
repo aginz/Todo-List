@@ -35,32 +35,39 @@
       <% end %>
 
       <div class="wrapper">
-        <div class="item">
-          <i class="<%= completed %> fa fa-check"></i>
+        <div class="left">
+          <div class="item">
+            <i class="<%= completed %> fa fa-check"></i>
+          </div>
+          <div class="item">
+              <i class="<%= completed %> <%= glow %> fa fa-star"></i>
+          </div>
         </div>
+
         <div class="item">
-            <i class="<%= completed %> <%= glow %> fa fa-star"></i>
-        </div>
-        <div class="item" id="description">
           <p class="<%= completed %> <%= striked %>">
             <%= todo_item.description %>
           </p>
         </div>
-        <div class="item">
-          <p class="<%= completed %>">
-            <%= link_to 'Edit', edit_todo_item_path(todo_item)%>
-          </p>
+
+        <div class="right">
+          <div class="item">
+            <p class="<%= completed %>">
+              <%= link_to 'Edit', edit_todo_item_path(todo_item), class: 'todo_link'%>
+            </p>
+          </div>
+          <div class="item">
+            <%= link_to todo_item, class: 'todo_link', method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="<%= completed %> todo_link fa fa-trash"></i>
+            <% end %>
+          </div>
         </div>
-        <div class="item">
-          <%= link_to todo_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="<%= completed %> fa fa-trash"></i>
-          <% end %>
-        </div>
+
       </div>
     <% end %>
   </section>
 
-  <div class="link">
-    <%= link_to 'New Todo Item', new_todo_item_path %>
+  <div class="todo_link">
+    <%= link_to 'New To Do Item', new_todo_item_path, class: 'todo_link' %>
   </div>
 </div>
