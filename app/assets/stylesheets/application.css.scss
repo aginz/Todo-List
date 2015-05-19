@@ -13,6 +13,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "todo_items";
 
 
 html, body {
@@ -23,11 +24,36 @@ html, body {
   padding: 0;
 }
 
-.header {
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 2px 2px rgba(0,0,0,.15);
-  position: fixed;
+.link {
+  text-align: center;
+}
+
+.todo_panel {
   width: 100%;
+  height: 100%;
+}
+
+.todo_panel header {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 3%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5em;
+}
+
+.todo_panel form {
+  width: 20%;
+  margin: 20px auto;
+  padding: 120px 0 0 0;
+}
+
+.todo_panel section {
+  margin-top: 15%;
+  text-align: center;
 }
 
 h1 {
@@ -38,10 +64,7 @@ h1 {
   text-align: center;
 }
 
-.main {
-  padding: 120px 0 0 0;
-  width: 100%;
-}
+
 
 .list p {
   background: rgba(255,255,255,0.95);
@@ -51,24 +74,6 @@ h1 {
   margin: 0 auto 5px;
   padding: 20px;
   width: 520px;
-}
-
-.list p .glyphicon-star {
-  cursor: pointer;
-  margin: 0 10px 0 10px;
-}
-
-.list p .glyphicon-star:hover, .list p .active {
-  color: #ffcc00;
-}
-
-.list p .glyphicon-remove {
-  cursor: pointer;
-  float: right;
-}
-
-.list p .glyphicon-remove:hover {
-  color: #ed1c24;
 }
 
 form.form {

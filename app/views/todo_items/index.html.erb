@@ -12,51 +12,55 @@
   </form>
 </div>
  -->
-<p id="notice"><%= notice %></p>
-
-<div class="header">
-  <h1>To Do List</h1>
-</div>
 
 
-<div class="todo_list">
-  <% @todo_items.each do |todo_item| %>
-    <% completed = "" %>
-    <% striked = "" %>
-    <% glow = "" %>
+<div class="todo_panel">
+  <header>To Do List</header>
 
-    <% if todo_item[:check] == true %>
-      <% completed = "complete" %>
-      <% striked = "striked" %>
-    <% end %>
+  <section>
+    <p id="notice"><%= notice %></p>
 
-    <% if todo_item[:star] == true %>
-      <% glow = "glow" %>
-    <% end %>
+    <% @todo_items.each do |todo_item| %>
+      <% completed = "" %>
+      <% striked = "" %>
+      <% glow = "" %>
 
-    <div class="wrapper">
-      <div class="item">
-        <i class="<%= completed %> fa fa-check"></i>
-      </div>
-      <div class="item">
-          <i class="<%= completed %> <%= glow %> fa fa-star"></i>
-      </div>
-      <div class="item">
-        <p class="<%= completed %> <%= striked %>">
-          <%= link_to edit_todo_item_path(todo_item) do %>
+      <% if todo_item[:check] == true %>
+        <% completed = "complete" %>
+        <% striked = "striked" %>
+      <% end %>
+
+      <% if todo_item[:star] == true %>
+        <% glow = "glow" %>
+      <% end %>
+
+      <div class="wrapper">
+        <div class="item">
+          <i class="<%= completed %> fa fa-check"></i>
+        </div>
+        <div class="item">
+            <i class="<%= completed %> <%= glow %> fa fa-star"></i>
+        </div>
+        <div class="item" id="description">
+          <p class="<%= completed %> <%= striked %>">
             <%= todo_item.description %>
+          </p>
+        </div>
+        <div class="item">
+          <p class="<%= completed %>">
+            <%= link_to 'Edit', edit_todo_item_path(todo_item)%>
+          </p>
+        </div>
+        <div class="item">
+          <%= link_to todo_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="<%= completed %> fa fa-trash"></i>
           <% end %>
-        </p>
+        </div>
       </div>
-      <div class="item">
-        <%= link_to todo_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <i class="<%= completed %> fa fa-trash"></i>
-        <% end %>
-      </div>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </section>
 
-<div class="link">
-  <%= link_to 'New Todo item', new_todo_item_path %>
+  <div class="link">
+    <%= link_to 'New Todo Item', new_todo_item_path %>
+  </div>
 </div>
