@@ -14788,3 +14788,27 @@ Processing by TodoItemsController#index as HTML
   [1m[35mTodoItem Load (0.4ms)[0m  SELECT "todo_items".* FROM "todo_items"
   Rendered todo_items/index.html.erb within layouts/application (3.9ms)
 Completed 200 OK in 114ms (Views: 112.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2015-07-04 22:41:14 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (26.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TodoItemsController#index as HTML
+  [1m[35mTodoItem Load (23.9ms)[0m  SELECT "todo_items".* FROM "todo_items"
+  Rendered todo_items/index.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 3149ms (Views: 3097.7ms | ActiveRecord: 35.8ms)
+
+
+Started GET "/" for ::1 at 2015-07-04 22:41:18 -0400
+Processing by TodoItemsController#index as HTML
+  [1m[36mTodoItem Load (0.3ms)[0m  [1mSELECT "todo_items".* FROM "todo_items"[0m
+  Rendered todo_items/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 84ms (Views: 82.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/todo_items.self-8945ca22b2460cf8d143cc81be032bd9b4c696c248a892907f86807a9a224c90.js?body=1" for ::1 at 2015-07-04 22:41:18 -0400
+
+
+Started GET "/assets/application.self-d8af9a26f02cd375b597b707187862dd8afa7096bc9ece4d13023d0752c449e4.css?body=1" for ::1 at 2015-07-04 22:41:18 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2015-07-04 22:41:18 -0400
